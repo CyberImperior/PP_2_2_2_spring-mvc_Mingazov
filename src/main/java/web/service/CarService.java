@@ -20,9 +20,7 @@ public class CarService {
     }
 
     public List<Car> getCountCars(Integer quantity) {
-        List<Car> cars = new ArrayList<>();
-        List<Car> fullCars = makeCarList();
-        return fullCars.stream().limit(quantity).toList();
+        return makeCarList().stream().limit(quantity).toList();
     }
 
 }

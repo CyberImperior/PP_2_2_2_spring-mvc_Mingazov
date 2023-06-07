@@ -23,7 +23,10 @@ public class CarsController {
         if (count == null) {
             count = carService.makeCarList().size();
         }
-        if (count < 0 && count > 4) {
+
+        if (count < 0) {
+            model.addAttribute("cars", carService.getCountCars(0));
+        } else if (count > 4) {
             model.addAttribute("cars", carService.makeCarList()) ;
         } else {
             model.addAttribute("cars", carService.getCountCars(count)) ;
